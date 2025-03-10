@@ -18,7 +18,6 @@ Roti roti[] = {
 };
 
 void tampilan_roti(){
-    system("cls");
     
     Roti *ptr_roti = roti;
 
@@ -139,10 +138,12 @@ int main(){
         case 4:
             quick_sort(roti, 0, sizeof(roti) / sizeof(*roti) - 1);
             cout << "Roti telah diurutkan berdasarkan harga (asc)." << endl;
+             tampilan_roti();
             break;
         case 5:
             bubble_sort();
             cout << "Roti telah diurutkan berdasarkan harga (desc)." << endl;
+             tampilan_roti();
             break;
         case 6:
             cout << "Terima kasih" << endl;
