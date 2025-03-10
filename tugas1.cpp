@@ -47,11 +47,12 @@ void sequential(){
     cout << "Roti tidak ditemukan." << endl;
 }
 
-void bubble_sort() {
+
+void sort_nama_binary() {
     int n = sizeof(roti) / sizeof(*roti);
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
-            if (roti[j].harga_roti < roti[j + 1].harga_roti) {
+            if (roti[j].nama_roti > roti[j + 1].nama_roti) {
                 swap(roti[j], roti[j + 1]);
             }
         }
@@ -63,7 +64,7 @@ void binary(){
     cin.ignore();
     getline(cin, nama);
 
-    bubble_sort();
+    sort_nama_binary();
 
     int left = 0, right = sizeof(roti) / sizeof(*roti) - 1;
     while (left <= right) {
@@ -80,6 +81,16 @@ void binary(){
     }
 }
 
+void bubble_sort() {
+    int n = sizeof(roti) / sizeof(*roti);
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (roti[j].harga_roti < roti[j + 1].harga_roti) {
+                swap(roti[j], roti[j + 1]);
+            }
+        }
+    }
+}
 void quick_sort(Roti arr[], int low, int high) {
     if (low < high) {
         int pivot = arr[high].harga_roti;
