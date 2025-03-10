@@ -58,7 +58,6 @@ void bubble_sort() {
     }
 }
 void binary(){
-    bubble_sort();
     string nama;
     cout << "Masukkan nama roti: ";
     cin.ignore();
